@@ -5,15 +5,25 @@
  */
 package com.intersoftware.introduccion.modelos;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 /**
  *
  * @author Juan
  */
+
+
+@Entity
 public class Pelicula {
     
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int id;
     private String titulo;
     private String sinopsis;
-    private String urlFoto;
+    private String url_foto;
     private int duracion;
 
     public String getTitulo() {
@@ -33,11 +43,11 @@ public class Pelicula {
     }
 
     public String getUrlFoto() {
-        return urlFoto;
+        return url_foto;
     }
 
     public void setUrlFoto(String urlFoto) {
-        this.urlFoto = urlFoto;
+        this.url_foto = urlFoto;
     }
 
     public int getDuracion() {
@@ -46,6 +56,14 @@ public class Pelicula {
 
     public void setDuracion(int duracion) {
         this.duracion = duracion;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     
